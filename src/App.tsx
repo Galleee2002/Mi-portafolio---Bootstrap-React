@@ -407,11 +407,10 @@ const ElegantPortfolio: React.FC = () => {
       title: "E-Commerce Platform",
       description:
         "Plataforma de comercio electrónico moderna con React, TypeScript y integración de pagos. Funcionalidades completas de carrito y gestión de productos.",
-      image:
-        "https://via.placeholder.com/400x250/1a1a1a/ffffff?text=E-Commerce+Platform",
-      technologies: ["React", "TypeScript", "Node.js", "MongoDB"],
-      demoUrl: "#",
-      githubUrl: "#",
+      image: "/imagepreview.png",
+      technologies: ["React", "TypeScript", "SASS"],
+      demoUrl: "https://e-commerce-alpha-gray.vercel.app/",
+      githubUrl: "https://github.com/Galleee2002/Ecommerce.git",
     },
     {
       id: 2,
