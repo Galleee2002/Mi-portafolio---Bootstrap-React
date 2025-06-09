@@ -416,7 +416,7 @@ const ElegantPortfolio: React.FC = () => {
       id: 2,
       title: "Calculadora de porcentaje ",
       description:
-        "Calculadora de porcentaje sencilla y rápida, desarrollada en React. Permite calcular porcentajes de forma intuitiva y práctica.",
+        "Calculadora de porcentaje sencilla y rápida, desarrollada en React y JavaScript. Permite calcular porcentajes de forma intuitiva y práctica.",
       image: "/calculadora.png",
       technologies: ["React", "JS", "CSS"],
       demoUrl: "https://calculadoradeporcentaje.netlify.app/",
@@ -446,14 +446,13 @@ const ElegantPortfolio: React.FC = () => {
     },
     {
       id: 5,
-      title: "Social Media App",
+      title: "Agencia de viajes",
       description:
-        "Red social con funcionalidades de posts, comentarios, likes y chat en tiempo real. Interfaz moderna y responsive.",
-      image:
-        "https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Social+Media+App",
-      technologies: ["React", "Firebase", "Material-UI", "PWA"],
-      demoUrl: "#",
-      githubUrl: "#",
+        "Sitio web de agencia de viajes con animaciones puras de CSS.",
+      image: "/Vialume.png",
+      technologies: ["HTML", "CSS"],
+      demoUrl: "https://agencia-de-viajes-pi.vercel.app/",
+      githubUrl: "https://github.com/Galleee2002/TP_MAQUETADO_2.git",
     },
     {
       id: 6,
