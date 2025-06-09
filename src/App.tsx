@@ -414,14 +414,13 @@ const ElegantPortfolio: React.FC = () => {
     },
     {
       id: 2,
-      title: "Task Management App",
+      title: "Calculadora de porcentaje ",
       description:
-        "Aplicación de gestión de tareas con interfaz drag & drop, notificaciones en tiempo real y colaboración en equipo.",
-      image:
-        "https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Task+Manager",
-      technologies: ["React", "Redux", "Socket.io", "Express"],
-      demoUrl: "#",
-      githubUrl: "#",
+        "Calculadora de porcentaje sencilla y rápida, desarrollada en React. Permite calcular porcentajes de forma intuitiva y práctica.",
+      image: "/public/calculadora.png",
+      technologies: ["React", "JS", "CSS"],
+      demoUrl: "https://calculadoradeporcentaje.netlify.app/",
+      githubUrl: "https://github.com/Galleee2002/Calculadora-de-porcentaje.git",
     },
     {
       id: 3,
