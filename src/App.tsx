@@ -417,7 +417,7 @@ const ElegantPortfolio: React.FC = () => {
       title: "Calculadora de porcentaje ",
       description:
         "Calculadora de porcentaje sencilla y rápida, desarrollada en React. Permite calcular porcentajes de forma intuitiva y práctica.",
-      image: "/public/calculadora.png",
+      image: "/calculadora.png",
       technologies: ["React", "JS", "CSS"],
       demoUrl: "https://calculadoradeporcentaje.netlify.app/",
       githubUrl: "https://github.com/Galleee2002/Calculadora-de-porcentaje.git",
