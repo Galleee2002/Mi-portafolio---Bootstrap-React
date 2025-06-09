@@ -425,7 +425,8 @@ const ElegantPortfolio: React.FC = () => {
     {
       id: 3,
       title: "Spotify Clone",
-      description: "",
+      description:
+        "Diseño de Spotify inmersivo, estilos elegantes con animaciones suaves.",
       image: "/spotify.png",
       technologies: ["React", "TypeScript", "HTML5", "CSS3"],
       demoUrl: "https://spotifyclonereactts.netlify.app/",
