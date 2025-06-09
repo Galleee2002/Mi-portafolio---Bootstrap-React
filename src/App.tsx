@@ -424,25 +424,23 @@ const ElegantPortfolio: React.FC = () => {
     },
     {
       id: 3,
-      title: "Weather Dashboard",
-      description:
-        "Dashboard meteorológico interactivo con gráficos dinámicos, pronósticos detallados y geolocalización automática.",
-      image:
-        "https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Weather+Dashboard",
-      technologies: ["React", "Chart.js", "Weather API", "CSS3"],
-      demoUrl: "#",
-      githubUrl: "#",
+      title: "Spotify Clone",
+      description: "",
+      image: "/spotify.png",
+      technologies: ["React", "TypeScript", "HTML5", "CSS3"],
+      demoUrl: "https://spotifyclonereactts.netlify.app/",
+      githubUrl: "https://github.com/Galleee2002/Spotify-Clone.git",
     },
     {
       id: 4,
       title: "Portfolio Website",
       description:
-        "Sitio web portfolio responsivo con animaciones suaves, modo oscuro/claro y optimización SEO completa.",
-      image:
-        "https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Portfolio+Website",
-      technologies: ["React", "SCSS", "Framer Motion", "Next.js"],
-      demoUrl: "#",
-      githubUrl: "#",
+        "Sitio web portfolio responsivo con animaciones suaves, modo oscuro elegante y optimización completa.",
+      image: "/portafolio.png",
+      technologies: ["React", "Bootstrap", "TypeScript"],
+      demoUrl: "https://miportfoliodevgael.vercel.app/",
+      githubUrl:
+        "https://github.com/Galleee2002/Mi-portafolio---Bootstrap-React.git",
     },
     {
       id: 5,
