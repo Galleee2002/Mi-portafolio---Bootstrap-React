@@ -61,10 +61,8 @@ const ParticleSystem = memo(() => {
     const resizeCanvas = () => {
       const dpr = window.devicePixelRatio || 1;
       const rect = canvas.getBoundingClientRect();
-
       canvas.width = rect.width * dpr;
       canvas.height = rect.height * dpr;
-
       ctx.scale(dpr, dpr);
       canvas.style.width = rect.width + "px";
       canvas.style.height = rect.height + "px";
@@ -152,7 +150,6 @@ const ParticleSystem = memo(() => {
           const distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < 100) {
-            const opacity = ((100 - distance) / 100) * 0.1;
             ctx.strokeStyle = `rgba(255, 255, 255)`;
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
@@ -308,6 +305,7 @@ const ProjectCard = memo(
 
 const ElegantPortfolio: React.FC = () => {
   const [heroVisible, setHeroVisible] = useState<boolean>(false);
+  const [newHeroVisible, setNewHeroVisible] = useState<boolean>(false);
   const [aboutVisible, setAboutVisible] = useState<boolean>(false);
   const [projectsVisible, setProjectsVisible] = useState<boolean>(false);
   const [hoveredButton, setHoveredButton] = useState<string | null>(null);
@@ -316,6 +314,9 @@ const ElegantPortfolio: React.FC = () => {
   const [hoveredHeroButton, setHoveredHeroButton] = useState<number | null>(
     null
   );
+  const [hoveredNewHeroButton, setHoveredNewHeroButton] = useState<
+    number | null
+  >(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const [contactForm, setContactForm] = useState<ContactForm>({
     name: "",
@@ -325,11 +326,11 @@ const ElegantPortfolio: React.FC = () => {
   });
   const [showAlert, setShowAlert] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-  const parallaxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const timer1 = setTimeout(() => setHeroVisible(true), 300);
-    const timer2 = setTimeout(() => setAboutVisible(true), 800);
+    const timer2 = setTimeout(() => setNewHeroVisible(true), 500);
+    const timer3 = setTimeout(() => setAboutVisible(true), 800);
 
     const handleScroll = () => {
       const projectsSection = document.getElementById("proyectos");
@@ -347,6 +348,7 @@ const ElegantPortfolio: React.FC = () => {
     return () => {
       clearTimeout(timer1);
       clearTimeout(timer2);
+      clearTimeout(timer3);
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
@@ -414,7 +416,7 @@ const ElegantPortfolio: React.FC = () => {
     },
     {
       id: 2,
-      title: "Calculadora de porcentaje ",
+      title: "Calculadora de porcentaje",
       description:
         "Calculadora de porcentaje sencilla y rápida, desarrollada en React y JavaScript. Permite calcular porcentajes de forma intuitiva y práctica.",
       image: "/calculadora.png",
@@ -453,23 +455,13 @@ const ElegantPortfolio: React.FC = () => {
       demoUrl: "https://agencia-de-viajes-pi.vercel.app/",
       githubUrl: "https://github.com/Galleee2002/TP_MAQUETADO_2.git",
     },
-    {
-      id: 6,
-      title: "Learning Platform",
-      description:
-        "Plataforma educativa con cursos interactivos, seguimiento de progreso y sistema de certificaciones.",
-      image:
-        "https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Learning+Platform",
-      technologies: ["React", "GraphQL", "PostgreSQL", "Docker"],
-      demoUrl: "#",
-      githubUrl: "#",
-    },
   ];
 
   return (
-    <div className="portfolio" ref={parallaxRef}>
+    <div className="portfolio">
       <ParticleSystem />
       <ParallaxBackground />
+
       <nav className="navbar">
         <a href="#inicio" className="nav-brand">
           MI PORTAFOLIO
@@ -571,6 +563,72 @@ const ElegantPortfolio: React.FC = () => {
         </Container>
       </section>
 
+      <section id="hero" className="new-hero">
+        <div className="hero-bg-gradient"></div>
+        <div className="floating-elements">
+          <div className="floating-circle circle-1"></div>
+          <div className="floating-circle circle-2"></div>
+          <div className="floating-circle circle-3"></div>
+        </div>
+        <Container>
+          <div
+            className={`new-hero-content ${
+              newHeroVisible ? "new-hero-visible" : ""
+            }`}
+          >
+            <h2 className="new-hero-title">
+              Transformando ideas en
+              <span className="gradient-text"> experiencias digitales </span>
+              extraordinarias
+            </h2>
+            <p className="new-hero-description">
+              Creador de aplicaciones web modernas, me especializo en React,
+              TypeScript y tecnologías de vanguardia para dar vida a productos
+              digitales innovadores que impactan y conectan.
+            </p>
+            <div className="hero-stats">
+              <div className="stat-item">
+                <span className="stat-number">5+</span>
+                <span className="stat-label">Proyectos</span>
+              </div>
+
+              <div className="stat-divider"></div>
+              <div className="stat-item">
+                <span className="stat-number">100%</span>
+                <span className="stat-label">Satisfacción</span>
+              </div>
+            </div>
+            <div className="new-hero-actions">
+              <Button
+                variant="primary"
+                size="lg"
+                className={`primary-cta ${
+                  hoveredNewHeroButton === 0 ? "primary-cta-hovered" : ""
+                }`}
+                onMouseEnter={() => setHoveredNewHeroButton(0)}
+                onMouseLeave={() => setHoveredNewHeroButton(null)}
+                onClick={() => scrollToSection("proyectos")}
+              >
+                <span>Explorar Proyectos</span>
+                <div className="button-shine"></div>
+              </Button>
+              <Button
+                variant="outline-secondary"
+                size="lg"
+                className={`secondary-cta ${
+                  hoveredNewHeroButton === 1 ? "secondary-cta-hovered" : ""
+                }`}
+                onMouseEnter={() => setHoveredNewHeroButton(1)}
+                onMouseLeave={() => setHoveredNewHeroButton(null)}
+                onClick={() => scrollToSection("sobre-mi")}
+              >
+                Conocer más
+              </Button>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       <section id="sobre-mi" className="about-section">
         <Container>
           <div
@@ -578,10 +636,10 @@ const ElegantPortfolio: React.FC = () => {
           >
             <h2 className="about-title">QUIÉN SOY</h2>
             <p className="about-description">
-              Soy un desarrollador frontend apasionado por crear interfaces de
-              usuario atractivas y funcionales. Me especializo en React,
-              TypeScript y las últimas tecnologías web para dar vida a ideas
-              innovadoras.
+              Mi nombre es Gael Garcia, soy un desarrollador frontend apasionado
+              por crear interfaces de usuario atractivas y funcionales. Me
+              especializo en React, TypeScript y las últimas tecnologías web
+              para dar vida a ideas innovadoras.
             </p>
           </div>
 
